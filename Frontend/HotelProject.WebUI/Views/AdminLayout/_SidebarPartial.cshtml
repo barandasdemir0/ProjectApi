@@ -1,0 +1,10 @@
+﻿<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    @await Html.PartialAsync("/Views/AdminLayout/_SidebarLogoPartial.cshtml")
+    <ul class="nav">
+        @await Html.PartialAsync("/Views/AdminLayout/_SidebarProfilePartial.cshtml")
+        <li class="nav-item nav-category">
+            <span class="nav-link">Menüler</span>
+        </li>
+        @await Html.PartialAsync("/Views/AdminLayout/_SidebarPartPartial.cshtml")
+    </ul>
+</nav>
