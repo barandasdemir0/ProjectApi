@@ -1,0 +1,38 @@
+﻿@model UpdateDtoService
+@{
+    ViewData["Title"] = "ServiceUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Servis Güncelle</h4>
+            <form method="post">
+         
+                @Html.HiddenFor(x => x.ServiceID)
+                <div class="form-group">
+                    <label for="exampleInputName1">İcon </label>
+                    @Html.TextBoxFor(x => x.ServiceIcon, new { @class = "form-control" })
+                <span asp-validation-for="ServiceIcon" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+                    @Html.TextBoxFor(x => x.ServiceTitle, new { @class = "form-control" })
+                <span asp-validation-for="ServiceTitle" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="exampleInputName1">Açıklama</label>
+                    @Html.TextAreaFor(x => x.ServiceDescription,10,4 ,new { @class = "form-control" })
+                    <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+                </div>
+             
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Servis Güncelle</button>
+                <a href="/Staff/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+

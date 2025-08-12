@@ -1,0 +1,40 @@
+﻿@model CreateDtoService
+@{
+    ViewData["Title"] = "ServiceInsert";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Yeni Hizmet Ekle</h4>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group mb-3">
+                    <label for="ServiceIcon">Personel Adı Soyadı</label>
+                    <input type="text" class="form-control" name="ServiceIcon" placeholder="İcon giriniz">
+                    <span asp-validation-for="ServiceIcon" class="text-danger"></span>
+                  @*   hata mesajı için bunu ekledik spanı *@
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Personel Ünvanı</label>
+                    <input type="text" class="form-control"  name="ServiceTitle" placeholder="Başlık giriniz">
+                    <span asp-validation-for="ServiceTitle" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Sosyal Medya 1</label>
+                    <textarea type="text" cols="4" rows="10" class="form-control" name="ServiceDescription" placeholder="Açıklama giriniz"></textarea>
+                    <span asp-validation-for="ServiceDescription" class="text-danger"></span>
+                </div>
+
+            
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Hizmet Ekle</button>
+                <a href="/Service/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
