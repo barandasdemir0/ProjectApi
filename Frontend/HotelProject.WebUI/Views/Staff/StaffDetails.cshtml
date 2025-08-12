@@ -1,0 +1,49 @@
+﻿@model StaffViewModel
+@{
+    ViewData["Title"] = "StaffDetails";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Personel Güncelle</h4>
+
+           
+
+
+                @Html.HiddenFor(x => x.StaffID)
+                <div class="form-group">
+                    <label for="exampleInputName1">İsim Soyisim</label>
+                    @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control"  })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Ünvan</label>
+                @Html.TextBoxFor(x => x.StaffTitle, new { @class = "form-control" })
+                </div>
+
+
+
+
+                <div class="form-group mb-3">
+                    <label for="exampleInputName1">Sosyal Medya 1</label>
+                @Html.TextBoxFor(x => x.StaffSocialMedia1, new { @class = "form-control"})
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleInputName1">Sosyal Medya 1</label>
+                @Html.TextBoxFor(x => x.StaffSocialMedia2, new { @class = "form-control" })
+                </div>
+                <div class="form-group mb-3">
+                    <label for="exampleInputName1">Sosyal Medya 1</label>
+                @Html.TextBoxFor(x => x.StaffSocialMedia3, new { @class = "form-control" })
+                </div>
+
+
+              
+            
+        </div>
+    </div>
+</div>
+
+
+
