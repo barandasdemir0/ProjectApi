@@ -1,0 +1,40 @@
+﻿@model UpdateStaffViewModel
+@{
+    ViewData["Title"] = "StaffUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Personel Güncelle</h4>
+
+            
+                @Html.HiddenFor(x => x.StaffID)
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+                    @Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Ünvan</label>
+                    @Html.TextBoxFor(x => x.StaffTitle, new { @class = "form-control"  })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Sosyal Medya Hesabı 1</label>
+                    @Html.TextBoxFor(x => x.StaffSocialMedia1, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Sosyal Medya Hesabı 2</label>
+                    @Html.TextBoxFor(x => x.StaffSocialMedia2, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Sosyal Medya Hesabı 3</label>
+                    @Html.TextBoxFor(x => x.StaffSocialMedia3, new { @class = "form-control" })
+                </div>
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Personel Güncelle</button>
+                <a href="/Staff/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            
+        </div>
+    </div>
+</div>
+

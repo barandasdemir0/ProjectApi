@@ -34,7 +34,7 @@ namespace HotelProject.WebApi.Controllers
         }
 
 
-        [HttpDelete] // silmek için
+        [HttpDelete("{id}")] // silmek için
         public IActionResult SubscriberDelete(int id)
         {
             // Silme işlemi için genellikle bir id alırsınız.

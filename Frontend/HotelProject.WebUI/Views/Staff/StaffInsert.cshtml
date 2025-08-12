@@ -1,0 +1,45 @@
+﻿@model AddStaffViewModel
+@{
+    ViewData["Title"] = "StaffInsert";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Yeni Personel Ekle</h4>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group mb-3">
+                    <label for="StaffName">Personel Adı</label>
+                    <input type="text" class="form-control" id="StaffName" name="StaffName" placeholder="Adı giriniz">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="StaffTitle">Personel Ünvanı</label>
+                    <input type="text" class="form-control" id="StaffTitle" name="StaffTitle" placeholder="Ünvan giriniz">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="StaffSocialMedia1">Sosyal Medya 1</label>
+                    <input type="text" class="form-control" id="StaffSocialMedia1" name="StaffSocialMedia1" placeholder="URL giriniz">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="StaffSocialMedia2">Sosyal Medya 2</label>
+                    <input type="text" class="form-control" id="StaffSocialMedia2" name="StaffSocialMedia2" placeholder="URL giriniz">
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="StaffSocialMedia3">Sosyal Medya 3</label>
+                    <input type="text" class="form-control" id="StaffSocialMedia3" name="StaffSocialMedia3" placeholder="URL giriniz">
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Personel Ekle</button>
+                <a href="/Staff/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+

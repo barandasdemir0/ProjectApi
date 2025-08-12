@@ -1,8 +1,45 @@
-﻿
+﻿@model List<StaffViewModel>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
 }
 
-<h1>Index</h1>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Çalışan Tablosu</h4>
 
+            <div class="table-responsive">
+                <table class="table text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th class="col-1">#</th>
+                            <th class="col-3">Personel Adı</th>
+                            <th class="col-3">Personel Ünvan</th>
+                            <th class="col-2">Sil</th>
+                            <th class="col-2">Güncelle</th>
+                            <th class="col-2">Detaylar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@(++count)</td>
+                                <td>@item.StaffName</td>
+                                <td>@item.StaffTitle</td>
+                                <td><a href="/Staff/StaffDelete/@item.StaffID" class="btn btn-outline-danger btn-lg btn-rounded btn-fw">Sil</a></td>
+                                <td><a href="/Staff/StaffUpdate/@item.StaffID" class="btn btn-outline-warning btn-lg btn-rounded btn-fw">Güncelle</a></td>
+                                <td><a href="/Staff/StaffDetails/@item.StaffID" class="btn btn-outline-primary btn-lg btn-rounded btn-fw">Detaylar</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+                <a href="/Staff/StaffInsert/" class="btn btn-outline-primary  btn-lg btn-rounded btn-fw">Yeni Personel Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
