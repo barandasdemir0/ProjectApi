@@ -37,6 +37,9 @@ namespace HotelProject.WebApi
             builder.Services.AddScoped<IServiceDal, EfServiceDal>();
             builder.Services.AddScoped<IServiceService, ServiceManager>();
 
+            builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+
 
             builder.Services.AddCors(options =>
             {

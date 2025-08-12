@@ -25,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Dtos\SubscribeDto\" />
+    <Folder Include="Dtos\ServiceDto\" />
     <Folder Include="Dtos\StaffDTO\" />
   </ItemGroup>
 
