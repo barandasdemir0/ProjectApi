@@ -48,7 +48,7 @@ namespace HotelProject.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPut] // güncellemek için
+        [HttpPut("BookingUpdate")] // güncellemek için
         public IActionResult BookingUpdate(Booking booking)
         {
             // Güncelleme işlemi için genellikle bir model alırsınız.
@@ -64,6 +64,13 @@ namespace HotelProject.WebApi.Controllers
             // İdye göre bir staff bilgisi almak için genellikle bir id alırsınız.
             var result = _bookingService.TGetById(id);
             return Ok(result);
+        }
+
+        [HttpPut("BookingReservation")]
+        public IActionResult BookingReservation(Booking booking)
+        {
+            _bookingService.TBookingStatusChangeApproved(booking);
+            return Ok();
         }
     }
 }

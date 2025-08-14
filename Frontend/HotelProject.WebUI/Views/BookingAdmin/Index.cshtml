@@ -1,0 +1,67 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Rezervasyon Tablosu</h4>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Misafir Adı Soyadı</th>
+                            <th>Giriş Tarihi</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Durum</th>
+                            <th>Onayla</th>
+                            <th>İptal Et</th>
+                            <th>Beklet</th>
+                            <th>Güncelle</th>
+                            <th>Detaylar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@{
+                                count++;
+                            }
+                                    @count
+                                </td>
+                                <td>@item.CustomerName</td>
+                            <td>@item.CheckIn.ToString("dd-MMM-yyyy")</td>
+                            <td>@item.CheckOut.ToString("dd-MMM-yyyy")</td>
+                            @if (item.Status == "Onay Bekliyor")
+                            {
+                                <td><label class="badge badge-danger">Onay Bekliyor</label></td>
+                            }
+                                @if (item.Status == "Onaylandı")
+                            {
+                                <td><label class="badge badge-success">Giriş Yaptı</label></td>
+                            }
+                            @if (item.Status == "Çıkış Yaptı")
+                            {
+                                <td><label class="badge badge-primary">Çıkış Yaptı</label></td>
+                            }
+                                <td><a class="btn btn-outline-danger btn-lg btn-rounded btn-fw" href="/BookingAdmin/ApprovedReservation/@item.BookingID">Onayla</a></td>
+                                <td><a class="btn btn-outline-warning btn-lg btn-rounded btn-fw" href="/BookingAdmin/ApprovedReservation/@item.BookingID">İptal Et</a></td>
+                                <td><a class="btn btn-outline-info btn-lg btn-rounded btn-fw" href="/BookingAdmin/ApprovedReservation/@item.BookingID">Beklet</a></td>
+                                <td><a class="btn btn-outline-secondary btn-lg btn-rounded btn-fw" href="/BookingAdmin/ApprovedReservation/@item.BookingID">Güncelle</a></td>
+                                <td><a class="btn btn-outline-success btn-lg btn-rounded btn-fw" href="/BookingAdmin/ApprovedReservation/@item.BookingID">Detaylar</a></td>
+                        </tr>
+                                                }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
