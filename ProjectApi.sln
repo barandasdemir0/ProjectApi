@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36401.2 d17.14
+VisualStudioVersion = 17.14.36401.2
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiConsume", "ApiConsume", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProject.DtoLayer", "ApiConsume\HotelProject.DtoLayer\HotelProject.DtoLayer.csproj", "{F0FDB10E-C815-452C-890F-5ADBA444DFE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProject.WebUI", "Frontend\HotelProject.WebUI\HotelProject.WebUI.csproj", "{E1FE7742-1BBE-4103-8ACD-0A731B34E324}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RapidApi", "RapidApi", "{D6EC1268-5302-41D1-AFE8-DC32B2F165BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidApi.Consume", "RapidApi\RapidApi.Consume\RapidApi.Consume.csproj", "{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{E1FE7742-1BBE-4103-8ACD-0A731B34E324}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1FE7742-1BBE-4103-8ACD-0A731B34E324}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1FE7742-1BBE-4103-8ACD-0A731B34E324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{DB499A30-371E-4811-AB4F-E329048724EF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F0FDB10E-C815-452C-890F-5ADBA444DFE3} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{E1FE7742-1BBE-4103-8ACD-0A731B34E324} = {1377F2B0-59ED-44B8-A229-819C325FBE7F}
+		{F29DCABE-2708-4AE4-ACC5-A367AAAC94FB} = {D6EC1268-5302-41D1-AFE8-DC32B2F165BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A3945936-84E8-4588-8692-F89D2F4E20E6}

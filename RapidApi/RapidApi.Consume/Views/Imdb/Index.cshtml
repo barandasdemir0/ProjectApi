@@ -1,0 +1,31 @@
+﻿@model List<ApiMovieImdbViewModel>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br />
+    <table class="table table-bordered ">
+        <tr>
+            <th>#</th>
+            <th>Film Adı</th>
+            <th>Puanı</th>
+            <th>Yılı</th>
+            <th>Türü</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@{count++;} @count</td>
+                <td>@item.Series_Title</td>
+                <td>@item.rank</td>
+                <td>@item.Released_Year</td>
+                <td>@item.Genre</td>
+            </tr>
+        }
+    </table>
+</div>
