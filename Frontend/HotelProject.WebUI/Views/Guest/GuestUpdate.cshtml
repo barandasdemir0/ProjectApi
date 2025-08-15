@@ -1,0 +1,54 @@
+﻿@model UpdateGuestDto
+@{
+    ViewData["Title"] = "GuestUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Misafir Güncelle</h4>
+
+            @using (Html.BeginForm("GuestUpdate", "Guest", FormMethod.Post))
+            {
+
+                @Html.HiddenFor(x => x.GuestID)
+                <div class="form-group mb-3">
+                    <label>Adınız</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+
+                </div>
+                <div class="form-group mb-3">
+                    <label>SoyAdınız</label>
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Şehir</label>
+                    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Telefon</label>
+                    @Html.TextBoxFor(x => x.Telephone, new { @class = "form-control" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>TC Kimlik Numarası</label>
+                    @Html.TextBoxFor(x => x.IdentityNumber, new { @class = "form-control" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Mail</label>
+                    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control"})
+                </div>
+
+
+
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Misafir Güncelle</button>
+                <a href="/Guest/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,52 @@
+﻿@model List<ResultGuestDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Oda Tablosu</h4>
+
+            <div class="table-responsive">
+                <table class="table text-center align-middle">
+                    <thead>
+                        <tr>
+
+                            <th class="col-3">#</th>
+                            <th class="col-3">Ad Soyad</th>
+                            <th class="col-3">Şehir</th>
+                            <th class="col-3">Telefon</th>
+                            <th class="col-2">Sil</th>
+                            <th class="col-2">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @{
+                                        count++;
+                                    }
+                                    @count
+                                </td>
+                                <td>@item.Name @item.Surname</td>
+                                <td>@item.City</td>
+                                <td>@item.Telephone</td>
+                                <td><a href="/Guest/GuestDelete/@item.GuestID" class="btn btn-outline-danger btn-lg btn-rounded btn-fw">Sil</a></td>
+                                <td><a href="/Guest/GuestUpdate/@item.GuestID" class="btn btn-outline-warning btn-lg btn-rounded btn-fw">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+                <a href="/Guest/GuestInsert/" class="btn btn-outline-primary  btn-lg btn-rounded btn-fw">Yeni Misafir Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+

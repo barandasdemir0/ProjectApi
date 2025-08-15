@@ -16,8 +16,9 @@ namespace HotelProject.DataAccessLayer.Concrete
             base.OnModelCreating(builder);
 
             builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Roomincrease"));
-            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Staffincrease"));
-            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Guestincrease"));
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Staffincrease")).ToTable(tb=>tb.HasTrigger("Staffincrease"));
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("[Guestincrease]")).ToTable(tb=>tb.HasTrigger("[Guestincrease]"));
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("[Guestdecrease]")).ToTable(tb=>tb.HasTrigger("[Guestdecrease]"));
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
