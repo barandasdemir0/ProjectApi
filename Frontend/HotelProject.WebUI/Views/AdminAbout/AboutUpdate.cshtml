@@ -1,0 +1,55 @@
+﻿@model UpdateAboutDto
+@{
+    ViewData["Title"] = "AboutUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Hakkımda Güncelle</h4>
+
+            @using (Html.BeginForm("AboutUpdate", "AdminAbout", FormMethod.Post))
+            {
+
+
+                @Html.HiddenFor(x => x.AboutID)
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık 1</label>
+                    @Html.TextBoxFor(x => x.AboutTitle1, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık 2</label>
+                    @Html.TextBoxFor(x => x.AboutTitle2, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Açıklama </label>
+                    @Html.TextBoxFor(x => x.AboutContent, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Oda Sayısı</label>
+                    @Html.TextBoxFor(x => x.RoomCount, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Çalışan Sayısı</label>
+                    @Html.TextBoxFor(x => x.StaffCount, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputName1">Müşteri Sayısı</label>
+                    @Html.TextBoxFor(x => x.CustomerCount, new { @class = "form-control" })
+                </div>
+
+               
+
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Hakkında Güncelle</button>
+                <a href="/AdminAbout/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            }
+        </div>
+    </div>
+</div>
+

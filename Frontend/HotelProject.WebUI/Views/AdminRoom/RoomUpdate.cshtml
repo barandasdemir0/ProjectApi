@@ -1,0 +1,55 @@
+﻿@model UpdateRoomDto
+@{
+    ViewData["Title"] = "RoomUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title"> Oda Güncelle</h4>
+
+            @using (Html.BeginForm("RoomUpdate", "AdminRoom", FormMethod.Post))
+            {
+
+                @Html.HiddenFor(x => x.RoomID)
+                <div class="form-group mb-3">
+                    <label>Oda Numarası</label>
+                    @Html.TextBoxFor(x => x.RoomNumber, new { @class = "form-control", placeholder = "Oda Numarası" })
+                   
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Resimleri</label>
+                    @Html.TextBoxFor(x => x.RoomCoverImage, new { @class = "form-control", placeholder = "Resim" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Fiyatı/Gecelik</label>
+                    @Html.TextBoxFor(x => x.RoomPrice, new { @class = "form-control", placeholder = "Fiyat" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Başlığı</label>
+                    @Html.TextBoxFor(x => x.RoomTitle, new { @class = "form-control", placeholder = "Başlık" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Yatak Sayısı</label>
+                    @Html.TextBoxFor(x => x.BedCount, new { @class = "form-control", placeholder = "Yatak Sayısı" })
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Banyo Sayısı</label>
+                    @Html.TextBoxFor(x => x.BathCount, new { @class = "form-control", placeholder = "Banyo Sayısı" })
+                </div>
+              
+                <div class="form-group mb-3">
+                    <label>Oda Açıklaması</label>
+                    @Html.TextBoxFor(x => x.RoomDescription, new { @class = "form-control", placeholder = "Banyo Sayısı" })
+                </div>
+
+
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Oda Güncelle</button>
+                <a href="/AdminRoom/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            }
+        </div>
+    </div>
+</div>
+

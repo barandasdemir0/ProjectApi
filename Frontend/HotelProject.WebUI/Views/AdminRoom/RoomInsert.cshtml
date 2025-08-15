@@ -1,0 +1,53 @@
+﻿@model CreateRoomDto
+@{
+    ViewData["Title"] = "RoomInsert";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Yeni Oda Ekle</h4>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group mb-3">
+                    <label>Oda Numarası</label>
+                    <input type="text" class="form-control" name="RoomNumber" placeholder="Oda Numarası">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Resimleri</label>
+                    <input type="text" class="form-control" name="RoomCoverImage" placeholder="Resim">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Fiyatı/Gecelik</label>
+                    <input type="text" class="form-control" name="RoomPrice" placeholder="Fiyat">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Başlığı</label>
+                    <input type="text" class="form-control" name="RoomTitle" placeholder="Başlık">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Yatak Sayısı</label>
+                    <input type="text" class="form-control" name="BedCount" placeholder="Yatak Sayısı">
+                </div>
+                <div class="form-group mb-3">
+                    <label>Oda Banyo Sayısı</label>
+                    <input type="text" class="form-control" name="BathCount" placeholder="Banyo Sayısı">
+                </div>
+          
+                <div class="form-group mb-3">
+                    <label>Oda Açıklaması</label>
+                    <input type="text" class="form-control" name="RoomDescription" placeholder="Oda Açıklaması">
+                </div>
+
+               
+
+               
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Oda Ekle</button>
+                <a href="/AdminRoom/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+

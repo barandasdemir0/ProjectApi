@@ -1,0 +1,41 @@
+﻿@model List<ResultRoomDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Oda Tablosu</h4>
+
+            <div class="table-responsive">
+                <table class="table text-center align-middle">
+                    <thead>
+                        <tr>
+                            <th class="col-3">Oda Numarası</th>
+                            <th class="col-3">Oda Başlığı</th>
+                            <th class="col-2">Sil</th>
+                            <th class="col-2">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.RoomNumber</td>
+                                <td>@item.RoomTitle</td>
+                                <td><a href="/AdminRoom/RoomDelete/@item.RoomID" class="btn btn-outline-danger btn-lg btn-rounded btn-fw">Sil</a></td>
+                                <td><a href="/AdminRoom/RoomUpdate/@item.RoomID" class="btn btn-outline-warning btn-lg btn-rounded btn-fw">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <br />
+                <a href="/AdminRoom/RoomInsert/" class="btn btn-outline-primary  btn-lg btn-rounded btn-fw">Yeni Oda Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>
+

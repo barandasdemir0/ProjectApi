@@ -11,6 +11,14 @@ namespace HotelProject.DataAccessLayer.Concrete
 {
     public class Context:IdentityDbContext<AppUser,AppRole,int>
     {
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Roomincrease"));
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Staffincrease"));
+            builder.Entity<Room>().ToTable(tb=> tb.HasTrigger("Roomincrease")).ToTable(tb=>tb.HasTrigger("Guestincrease"));
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=BARANPC\\SQLEXPRESS;Database=HotelApiDb;integrated security=True; TrustServerCertificate=True;");
