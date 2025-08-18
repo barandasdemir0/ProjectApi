@@ -1,0 +1,35 @@
+﻿@model CreateWorkLocationDto
+@{
+    ViewData["Title"] = "WorkLocationUpdate";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Yeni Lokasyon Ekle</h4>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group mb-3">
+                    <label>Otel Adı</label>
+                    <input type="text" class="form-control" name="WorkLocationName" placeholder="Otel Adı giriniz">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label>Otel Şehri</label>
+                    <input type="text" class="form-control" name="WorkLocationCity" placeholder="Otel Şehri giriniz">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Personel Ekle</button>
+                <a href="/WorkLocation/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
