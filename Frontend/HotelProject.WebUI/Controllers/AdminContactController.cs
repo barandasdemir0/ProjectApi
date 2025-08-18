@@ -30,7 +30,18 @@ namespace HotelProject.WebUI.Controllers
                 var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData); //jsondan dönüştür
                 return View(values);
             }
+
+            //var responseMessage2 = await client.GetAsync("http://localhost:5023/api/GetContactCount");
+            //if (responseMessage2.IsSuccessStatusCode)
+            //{
+            //    var jsonData = await responseMessage.Content.ReadAsStringAsync();
+            //    //   var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData); //jsondan dönüştür
+            //    ViewBag.ContactCount = jsonData;
+            //    return View();
+            //}
+
             return View();
+
         }
         public async Task<IActionResult> Outbox()
         {
@@ -113,7 +124,18 @@ namespace HotelProject.WebUI.Controllers
         }
 
 
-
+        //public async Task<IActionResult> GetContactCount()
+        //{
+        //    var client = _httpClientFactory.CreateClient();
+        //    var responseMessage = await client.GetAsync("http://localhost:5023/api/GetContactCount");
+        //    if (responseMessage.IsSuccessStatusCode)
+        //    {
+        //        var jsonData = await responseMessage.Content.ReadAsStringAsync();
+        //        var values = JsonConvert.DeserializeObject<List<ResultContactDto>>(jsonData); //jsondan dönüştür
+        //        return View(values);
+        //    }
+        //    return View();
+        //}
 
 
 

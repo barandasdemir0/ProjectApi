@@ -66,5 +66,15 @@ namespace HotelProject.WebApi.Controllers
             var result = _contactService.TGetById(id);
             return Ok(result);
         }
+
+        [HttpGet("GetContactCount")] // İdye göre getirmek için
+        public IActionResult GetContactCount()
+        {
+
+            return Ok(_contactService.TGetContactCount());
+        }
+
+
+
     }
 }
