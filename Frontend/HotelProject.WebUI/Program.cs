@@ -1,5 +1,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace HotelProject.WebUI
 {
@@ -22,7 +24,18 @@ namespace HotelProject.WebUI
 
             builder.Services.AddAutoMapper(typeof(Program));
 
+            builder.Services.AddMvc(config =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
 
+            builder.Services.ConfigureApplicationCookie(option =>
+            {
+                option.Cookie.HttpOnly = true;
+                option.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                option.LoginPath = "/Login/Index/";
+            });
 
             var app = builder.Build();
 
@@ -31,8 +44,11 @@ namespace HotelProject.WebUI
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStatusCodePagesWithReExecute("/ErrorPage/Error404", "?code={0}");
+            app.UseHttpsRedirection();
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();
