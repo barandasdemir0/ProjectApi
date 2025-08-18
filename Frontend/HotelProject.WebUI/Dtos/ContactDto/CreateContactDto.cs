@@ -7,5 +7,6 @@
         public string? Subject { get; set; }
         public string? MessageContent { get; set; }
         public DateTime Date { get; set; }
+        public int MessageCategoryID { get; set; }
     }
 }

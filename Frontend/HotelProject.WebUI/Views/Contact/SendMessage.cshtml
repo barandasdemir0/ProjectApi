@@ -53,6 +53,13 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
+                                    @Html.DropDownListFor(x=>x.MessageCategoryID,(List<SelectListItem>)ViewBag.v,new {@class = "form-control"})
+                               
+                                    <label for="subject">Konu Başlığı</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
                                     <textarea class="form-control" placeholder="Mesajınız" asp-for="MessageContent" style="height: 150px"></textarea>
                                     <label for="message">Mesajınız</label>
                                 </div>
