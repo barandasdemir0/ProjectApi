@@ -1,0 +1,25 @@
+﻿@model AddRoleViewModel
+@{
+    ViewData["Title"] = "RoleInsert";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Yeni Rol Ekle</h4>
+            <form class="forms-sample" method="post">
+
+                <div class="form-group mb-3">
+                    <label>Rol Adı </label>
+                    <input type="text" class="form-control" name="RoleName" placeholder="Rol Adı">
+                </div>
+
+            
+                <button type="submit" class="btn btn-outline-primary btn-lg btn-rounded btn-fw me-2">Rol Ekle</button>
+                <a href="/Role/Index/" class="btn btn-outline-info btn-lg btn-rounded btn-fw">Geri Dön</a>
+            </form>
+        </div>
+    </div>
+</div>
+
