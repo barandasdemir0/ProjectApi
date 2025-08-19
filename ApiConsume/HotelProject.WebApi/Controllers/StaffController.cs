@@ -66,5 +66,14 @@ namespace HotelProject.WebApi.Controllers
             var result = _staffService.TGetById(id);
             return Ok(result);
         }
+
+
+        [HttpGet("Last4Staff")] // İdye göre getirmek için
+        public IActionResult Last4Staff()
+        {
+            // İdye göre bir staff bilgisi almak için genellikle bir id alırsınız.
+            var result = _staffService.TLast4Staff();
+            return Ok(result);
+        }
     }
 }

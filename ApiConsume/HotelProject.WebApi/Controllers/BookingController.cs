@@ -16,6 +16,9 @@ namespace HotelProject.WebApi.Controllers
             _bookingService = bookingService;
         }
 
+
+       
+
         [HttpGet] // listelemek için
         public IActionResult BookingList()
         {
@@ -71,6 +74,13 @@ namespace HotelProject.WebApi.Controllers
         {
             _bookingService.TBookingStatusChangeApproved(booking);
             return Ok();
+        }
+
+        [HttpGet("GetBookingList")]
+        public IActionResult GetBookingList()
+        {
+            var result = _bookingService.TGetBookingList();
+            return Ok(result);
         }
     }
 }
