@@ -23,5 +23,12 @@ namespace HotelProject.DataAccessLayer.EntityFramework
             var context = new Context();    
             return context.Users.Include(x => x.WorkLocation).ToList();
         }
+
+        public List<AppUser> UserListWithWorkLocation()
+        {
+            var context = new Context();
+            return context.Users.Include(x => x.WorkLocation).ToList();
+             
+        }
     }
 }
